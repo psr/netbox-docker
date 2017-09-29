@@ -30,6 +30,7 @@ RUN ln -s configuration.docker.py netbox/netbox/configuration.py
 COPY docker/gunicorn_config.py /opt/netbox/
 
 COPY docker/docker-entrypoint.sh /docker-entrypoint.sh
+COPY docker/nginx.conf /etc/netbox-nginx/
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 
 VOLUME ["/etc/netbox-nginx/"]
